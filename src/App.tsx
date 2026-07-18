@@ -72,7 +72,7 @@ export default function App() {
           {/* Main Portfolio Nav */}
           <Navbar logo="Jayr" onLinkClick={handleLinkClick} />
 
-          <main className="flex-grow bg-pure-white" id="portfolio-main-content">
+          <main className="flex-grow bg-pure-white pt-16" id="portfolio-main-content">
             {/* Hero Section */}
             <Hero />
 

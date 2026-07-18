@@ -51,7 +51,7 @@ export default function Navbar({
   };
 
   return (
-    <nav className="w-full bg-pure-white border-b border-light-gray sticky top-12 z-50 backdrop-blur-md bg-pure-white/95" id="portfolio-navbar">
+    <nav className="w-full bg-pure-white border-b border-light-gray fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-pure-white/95" id="portfolio-navbar">
       <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         
         {/* Left: Brand Logo */}
