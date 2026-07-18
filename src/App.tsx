@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
@@ -11,20 +11,45 @@ import SwatchTest from "./sections/SwatchTest";
 import Header from "./sections/Header";
 import { useTheme } from "./hooks/useTheme";
 
-type ViewMode = "portfolio" | "spec";
-
 export default function App() {
-  const [viewMode, setViewMode] = useState<ViewMode>("portfolio");
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   // Initialize and track active theme state
   useTheme();
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    window.addEventListener("popstate", handleLocationChange);
+    
+    const originalPushState = window.history.pushState;
+    const originalReplaceState = window.history.replaceState;
+
+    window.history.pushState = function (data: any, unused: string, url?: string | null) {
+      originalPushState.apply(this, [data, unused, url]);
+      handleLocationChange();
+    };
+
+    window.history.replaceState = function (data: any, unused: string, url?: string | null) {
+      originalReplaceState.apply(this, [data, unused, url]);
+      handleLocationChange();
+    };
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+      window.history.pushState = originalPushState;
+      window.history.replaceState = originalReplaceState;
+    };
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleLinkClick = (href: string) => {
-    if (viewMode !== "portfolio") {
-      setViewMode("portfolio");
+    if (currentPath !== "/" && currentPath !== "") {
+      window.history.pushState({}, "", "/");
       // Wait for rendering to complete before scrolling
       setTimeout(() => {
         const el = document.querySelector(href);
@@ -36,37 +61,13 @@ export default function App() {
     }
   };
 
+  const isDesignTokensRoute = currentPath === "/internal/design-tokens";
+
   return (
     <div className="min-h-screen bg-pure-white flex flex-col justify-between selection:bg-ink-black selection:text-pure-white" id="monochrome-app-root">
       
-      {/* Top Controller Bar */}
-      <div className="bg-ink-black text-pure-white text-[10px] sm:text-xs font-mono py-3 px-6 flex flex-col sm:flex-row justify-between items-center gap-2 border-b border-light-gray/15 sticky top-0 z-[60]" id="system-mode-toggle-banner">
-        <span className="tracking-widest opacity-80 uppercase">MONOCHROME ENGINE // v1.0.0</span>
-        <div className="flex items-center gap-6">
-          <button
-            onClick={() => setViewMode("portfolio")}
-            className={`cursor-pointer hover:text-light-gray transition-colors font-bold uppercase tracking-wider ${
-              viewMode === "portfolio" ? "border-b border-pure-white pb-0.5" : "opacity-60"
-            }`}
-            id="toggle-mode-portfolio"
-          >
-            LIVE_PORTFOLIO
-          </button>
-          <span className="opacity-30">|</span>
-          <button
-            onClick={() => setViewMode("spec")}
-            className={`cursor-pointer hover:text-light-gray transition-colors font-bold uppercase tracking-wider ${
-              viewMode === "spec" ? "border-b border-pure-white pb-0.5" : "opacity-60"
-            }`}
-            id="toggle-mode-spec"
-          >
-            DESIGN_TOKENS_SPEC
-          </button>
-        </div>
-      </div>
-
-      {/* Conditional Rendering Based on Mode */}
-      {viewMode === "portfolio" ? (
+      {/* Conditional Rendering Based on Route Path */}
+      {!isDesignTokensRoute ? (
         <div className="flex flex-col flex-grow animate-fade-in" id="portfolio-view-container">
           {/* Main Portfolio Nav */}
           <Navbar logo="Jayr" onLinkClick={handleLinkClick} />
@@ -103,6 +104,14 @@ export default function App() {
           <Header />
 
           <main className="flex-grow bg-off-white py-8" id="spec-main-content">
+            <div className="max-w-6xl mx-auto px-6 mb-6">
+              <button
+                onClick={() => window.history.pushState({}, "", "/")}
+                className="font-mono text-xs font-bold text-ink-black hover:opacity-70 transition-opacity uppercase tracking-tight flex items-center gap-1.5 cursor-pointer"
+              >
+                ← Back to Live Portfolio
+              </button>
+            </div>
             <SwatchTest />
           </main>
 
@@ -116,3 +125,4 @@ export default function App() {
     </div>
   );
 }
+
