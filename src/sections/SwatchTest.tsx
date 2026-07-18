@@ -1,10 +1,18 @@
 import { useState } from "react";
-import { Paintbrush, Type, Grid, Layout, ArrowRight, ExternalLink } from "lucide-react";
+import { Paintbrush, Type, Grid, Layout, ArrowRight, ExternalLink, Briefcase } from "lucide-react";
 import ColorSwatch from "../components/ColorSwatch";
 import TypographySpec from "../components/TypographySpec";
 import SpacingGuide from "../components/SpacingGuide";
 
-type TabType = "colors" | "typography" | "spacing" | "mockups";
+// Import reusable portfolio components
+import Navbar from "../components/Navbar";
+import Button from "../components/Button";
+import SectionWrapper from "../components/SectionWrapper";
+import SkillBadge from "../components/SkillBadge";
+import ProjectCard from "../components/ProjectCard";
+import Footer from "../components/Footer";
+
+type TabType = "colors" | "typography" | "spacing" | "mockups" | "portfolio";
 
 export default function SwatchTest() {
   const [activeTab, setActiveTab] = useState<TabType>("colors");
@@ -14,6 +22,7 @@ export default function SwatchTest() {
     { id: "typography" as TabType, label: "02. Typography Spec", icon: Type },
     { id: "spacing" as TabType, label: "03. Layout & Spacing", icon: Grid },
     { id: "mockups" as TabType, label: "04. Blueprint Mockups", icon: Layout },
+    { id: "portfolio" as TabType, label: "05. Portfolio Components", icon: Briefcase },
   ];
 
   return (
@@ -191,7 +200,170 @@ export default function SwatchTest() {
             </div>
           </div>
         )}
+
+        {activeTab === "portfolio" && (
+          <div className="space-y-16 animate-fade-in" id="portfolio-showcase">
+            {/* Portfolio Intro */}
+            <div className="border-b border-light-gray pb-4">
+              <h3 className="font-display font-bold text-lg text-ink-black tracking-tight">Portfolio Components Library</h3>
+              <p className="text-sm text-slate-gray mt-1">Reusable, high-contrast, fully typed TypeScript components built specifically for Jayr's developer portfolio.</p>
+            </div>
+
+            {/* Component 1: Navbar Preview */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-light-gray pb-2">
+                <h4 className="font-mono text-xs font-bold text-ink-black uppercase">01. Responsive Navigation (Navbar)</h4>
+                <span className="font-mono text-[10px] text-slate-gray">sticky / border-b / hamburger support</span>
+              </div>
+              <p className="text-sm text-charcoal leading-relaxed">
+                A clean, brand-forward navigation bar with absolute monochrome styling, and integrated mobile drawer trigger. No profile photo or avatar exists here.
+              </p>
+              <div className="border border-light-gray rounded-none overflow-hidden bg-off-white/45 p-1">
+                <Navbar logo="Jayr" />
+              </div>
+            </div>
+
+            {/* Component 2: Buttons Grid */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-light-gray pb-2">
+                <h4 className="font-mono text-xs font-bold text-ink-black uppercase">02. Micro-Interactions & Controls (Button)</h4>
+                <span className="font-mono text-[10px] text-slate-gray">solid primary / outlined secondary</span>
+              </div>
+              <p className="text-sm text-charcoal leading-relaxed">
+                Solid and outline buttons supporting fully typed event handlers, transition triggers, and state loaders.
+              </p>
+              <div className="flex flex-wrap gap-4 bg-white border border-light-gray p-6">
+                <div className="flex flex-col gap-2">
+                  <span className="font-mono text-[9px] text-slate-gray uppercase">Primary (Solid Black)</span>
+                  <Button variant="primary" onClick={() => alert("Primary button clicked!")}>
+                    Execute Command
+                  </Button>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span className="font-mono text-[9px] text-slate-gray uppercase">Secondary (Outlined)</span>
+                  <Button variant="secondary" onClick={() => alert("Secondary button clicked!")}>
+                    Reset Options
+                  </Button>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span className="font-mono text-[9px] text-slate-gray uppercase">Disabled State</span>
+                  <Button variant="primary" disabled className="opacity-40 cursor-not-allowed">
+                    Access Revoked
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Component 3: Skill Badges */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-light-gray pb-2">
+                <h4 className="font-mono text-xs font-bold text-ink-black uppercase">03. System Metadata Tags (SkillBadge)</h4>
+                <span className="font-mono text-[10px] text-slate-gray">text-based tags / hover borders</span>
+              </div>
+              <p className="text-sm text-charcoal leading-relaxed">
+                Clean text-based tags to represent tech stack layers. Styled strictly to eliminate colorful icons.
+              </p>
+              <div className="flex flex-wrap gap-2.5 bg-white border border-light-gray p-6">
+                <SkillBadge name="React 19" />
+                <SkillBadge name="TypeScript 5.8" />
+                <SkillBadge name="Vite 6" />
+                <SkillBadge name="Tailwind CSS v4" />
+                <SkillBadge name="Node.js" />
+                <SkillBadge name="Express API" />
+                <SkillBadge name="D3.js" />
+                <SkillBadge name="PostgreSQL" />
+              </div>
+            </div>
+
+            {/* Component 4: Project Cards */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-light-gray pb-2">
+                <h4 className="font-mono text-xs font-bold text-ink-black uppercase">04. Detail Grid Modules (ProjectCard)</h4>
+                <span className="font-mono text-[10px] text-slate-gray">specification, contribution & outcome layout</span>
+              </div>
+              <p className="text-sm text-charcoal leading-relaxed">
+                Project layout showcasing explicit engineering roles, measurable metrics, and support for an optional screenshot block.
+              </p>
+
+              <div className="space-y-6">
+                {/* Variant A: With Screenshot Slot */}
+                <div className="space-y-2">
+                  <span className="font-mono text-[9px] text-slate-gray block uppercase">Variant A: With Screenshot/Mockup Slot</span>
+                  <ProjectCard
+                    title="Unified Workspace Broker"
+                    description="Designed and deployed a server-side client gateway syncing user credentials, authenticating external services, and managing active tokens in near-instant durations."
+                    tags={["TypeScript", "Node.js", "Express", "OAuth"]}
+                    contribution="Designed fully typed security gateways, drafted ESM module bundling scripts using esbuild, and integrated scalable Express route handlers."
+                    outcome="Eliminated security compliance latency, improved token refresh cycles by 40%, and achieved 100% build reliability under high loads."
+                    screenshotSlot={
+                      <div className="text-center font-mono space-y-2">
+                        <div className="text-2xl font-bold tracking-tighter text-ink-black">BROKER.V1</div>
+                        <div className="text-[10px] text-slate-gray uppercase bg-light-gray/60 px-2 py-0.5 border border-light-gray">
+                          MONO_SCREENSHOT_SLOT
+                        </div>
+                      </div>
+                    }
+                  />
+                </div>
+
+                {/* Variant B: Text-only */}
+                <div className="space-y-2">
+                  <span className="font-mono text-[9px] text-slate-gray block uppercase">Variant B: Text-only (No screenshot required)</span>
+                  <ProjectCard
+                    title="Continuous Integration Engine"
+                    description="Configured low-overhead developer builds leveraging customized Node.js environments and Vite bundlers. Restructured standard layouts to optimize pipeline visual delivery."
+                    tags={["Vite 6", "Tailwind CSS", "GitHub Actions", "Docker"]}
+                    contribution="Wrote custom configuration adapters, established automated container builds, and streamlined the linter workflow structure."
+                    outcome="Decreased continuous integration build execution from 120s down to 22s while strictly preventing formatting drift."
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Component 5: SectionWrapper Example */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-light-gray pb-2">
+                <h4 className="font-mono text-xs font-bold text-ink-black uppercase">05. Content Boundaries (SectionWrapper)</h4>
+                <span className="font-mono text-[10px] text-slate-gray">max-width bounds / border borders</span>
+              </div>
+              <p className="text-sm text-charcoal leading-relaxed">
+                Standard section wrapper implementing vertical padding rhythm and structured border breaks.
+              </p>
+              <div className="border border-dashed border-slate-gray/60 p-1 bg-off-white/40">
+                <SectionWrapper
+                  id="example-wrapper-demo"
+                  title="01. Abstract Architecture"
+                  subtitle="A clean container enforcing rigorous geometric proportions and absolute whitespace discipline."
+                >
+                  <div className="bg-white border border-light-gray p-6 text-sm text-charcoal">
+                    This block exists nested inside the <code className="bg-off-white px-1 font-mono text-xs">SectionWrapper</code> component.
+                  </div>
+                </SectionWrapper>
+              </div>
+            </div>
+
+            {/* Component 6: Footer Preview */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-light-gray pb-2">
+                <h4 className="font-mono text-xs font-bold text-ink-black uppercase">06. Social Connects Strip (Footer)</h4>
+                <span className="font-mono text-[10px] text-slate-gray">minimal / no photo / action buttons</span>
+              </div>
+              <p className="text-sm text-charcoal leading-relaxed">
+                Highly readable footer listing links for email, GitHub, and LinkedIn. Free of redundant user visuals.
+              </p>
+              <div className="border border-light-gray bg-off-white">
+                <Footer
+                  email="jayr@operator.net"
+                  github="https://github.com"
+                  linkedin="https://linkedin.com"
+                  onBackToTop={() => alert("Back to top button clicked!")}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
+
   );
 }
