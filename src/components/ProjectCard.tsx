@@ -9,6 +9,7 @@ export interface ProjectCardProps {
   outcome: string;
   screenshotSlot?: ReactNode; // Optional slot to render a mockup screenshot or placeholder
   className?: string;
+  key?: string;
 }
 
 export default function ProjectCard({
