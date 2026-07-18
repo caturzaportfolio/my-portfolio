@@ -20,11 +20,8 @@ export default function Hero() {
       <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
         {/* Left Column: Generous Whitespace / Tiny System Index */}
         <div className="md:col-span-4 space-y-2 select-none">
-          <div className="font-mono text-[10px] text-slate-gray uppercase tracking-widest">
-            [ PORTFOLIO_INDEX_2026 ]
-          </div>
-          <div className="font-mono text-[9px] text-slate-gray/70">
-            LOC: 0.0.0.0 // STATE: ACTIVE
+          <div className="font-sans text-[11px] font-bold text-slate-gray uppercase tracking-widest">
+            Portfolio Index
           </div>
         </div>
 
@@ -65,8 +62,8 @@ export default function Hero() {
 
       {/* Understated bottom margin with pagination Motif */}
       <div className="w-full max-w-6xl mx-auto px-6 pt-16 flex justify-between items-center select-none text-slate-gray">
-        <span className="font-mono text-[9px] tracking-widest uppercase">
-          [ ARCHITECTURE_PORTFOLIO ]
+        <span className="font-sans text-[9px] font-bold tracking-widest uppercase">
+          Jayr Portfolio
         </span>
         
         {/* Minimal indicator */}

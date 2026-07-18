@@ -51,8 +51,8 @@ export default function SectionWrapper({
 
             {/* Pagination Dots Motif (recurring UI motif) */}
             <div className="flex flex-col items-center space-y-2 mt-8">
-              <span className="font-mono text-[9px] text-slate-gray uppercase tracking-widest">
-                [ INDEX ]
+              <span className="font-sans text-[9px] font-bold text-slate-gray uppercase tracking-widest">
+                INDEX
               </span>
               <div className="flex items-center gap-1.5">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -93,8 +93,8 @@ export default function SectionWrapper({
             {/* Desktop Subtitle Info Strip (thin horizontal dividers) */}
             {subtitle && (
               <div className="hidden md:block border-b border-light-gray pb-4">
-                <p className="font-mono text-[11px] text-slate-gray uppercase tracking-wider">
-                  SPEC // {subtitle}
+                <p className="font-sans text-[11px] font-semibold text-slate-gray uppercase tracking-wider">
+                  {subtitle}
                 </p>
               </div>
             )}

@@ -26,8 +26,8 @@ export default function Footer({
       <div className="w-full max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         {/* Branding & Tiny Pitch */}
         <div className="space-y-2">
-          <h4 className="font-display font-black text-sm text-ink-black tracking-widest uppercase">
-            JAYR // COMPONENT PORTFOLIO
+          <h4 className="font-sans font-extrabold text-sm text-ink-black tracking-widest uppercase">
+            Jayr Portfolio
           </h4>
           <p className="font-sans text-xs text-slate-gray max-w-xs leading-relaxed">
             Architectural layouts, minimal footprint, maximum accessibility. Engineered in black, gray, and white.
@@ -71,11 +71,11 @@ export default function Footer({
 
           <button
             onClick={handleScrollTop}
-            className="flex items-center gap-1.5 font-mono text-xs text-slate-gray hover:text-ink-black transition-colors border border-light-gray/60 px-2.5 py-1.5 bg-pure-white hover:border-ink-black cursor-pointer"
+            className="flex items-center gap-1.5 font-sans text-xs font-semibold text-slate-gray hover:text-ink-black transition-colors border border-light-gray/60 px-2.5 py-1.5 bg-pure-white hover:border-ink-black cursor-pointer uppercase tracking-wider"
             id="footer-scroll-top-btn"
           >
             <ArrowUp size={12} />
-            <span>RETURN_TOP</span>
+            <span>Back to Top</span>
           </button>
         </div>
       </div>

@@ -55,7 +55,7 @@ export default function Reliability() {
                     <h3 className="font-display font-extrabold text-base text-ink-black uppercase tracking-tight leading-none">
                       {practice.title}
                     </h3>
-                    <span className="font-mono text-[9px] text-slate-gray uppercase tracking-widest mt-1 block">
+                    <span className="font-sans text-[10px] font-semibold text-slate-gray uppercase tracking-wider mt-1 block">
                       {practice.subtitle}
                     </span>
                   </div>
@@ -67,8 +67,8 @@ export default function Reliability() {
               </div>
 
               {/* Little visual accent on bottom representing a clean pipeline step */}
-              <div className="mt-6 pt-4 border-t border-light-gray/60 flex items-center justify-between text-[10px] font-mono text-slate-gray">
-                <span>SYSTEM_STANDARD // COMPLIANT</span>
+              <div className="mt-6 pt-4 border-t border-light-gray/60 flex items-center justify-between text-[10px] font-sans text-slate-gray">
+                <span className="uppercase font-medium tracking-wide">Verified standard</span>
                 <span className="h-1.5 w-1.5 bg-ink-black rounded-full" />
               </div>
             </div>

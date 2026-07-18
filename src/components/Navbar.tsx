@@ -44,7 +44,7 @@ export default function Navbar({
   const handleSearchSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      alert(`Searching portfolio for: "${searchQuery}" (Simulated local index lookup)`);
+      console.log(`Searching portfolio for: "${searchQuery}"`);
       setSearchQuery("");
       setIsSearchOpen(false);
     }

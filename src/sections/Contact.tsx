@@ -57,9 +57,8 @@ export default function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12" id="contact-container">
         {/* Call To Action Narrative */}
         <div className="md:col-span-5 space-y-6">
-          <div className="flex items-center gap-2 text-slate-gray font-mono text-xs">
-            <Terminal size={14} className="text-ink-black" />
-            <span>SOCKET_INFO // MAIL_INBOX</span>
+          <div className="flex items-center gap-2 text-slate-gray font-sans text-xs font-semibold tracking-wider uppercase">
+            <span>Inquiry Channels</span>
           </div>
           
           <h3 className="font-display font-black text-3xl text-ink-black uppercase tracking-tight leading-none">
@@ -133,9 +132,9 @@ export default function Contact() {
               <div className="pt-4 w-full">
                 <button
                   onClick={() => setSuccess(false)}
-                  className="w-full py-2.5 px-4 font-mono text-[10px] font-bold text-ink-black uppercase border border-light-gray hover:border-ink-black bg-off-white hover:bg-pure-white transition-all cursor-pointer"
+                  className="w-full py-2.5 px-4 font-sans text-xs font-bold text-ink-black uppercase border border-light-gray hover:border-ink-black bg-off-white hover:bg-pure-white transition-all cursor-pointer"
                 >
-                  [ Send Another Message ]
+                  Send Another Message
                 </button>
               </div>
             </div>
@@ -145,7 +144,7 @@ export default function Contact() {
                 <div className="p-3 bg-off-white border border-light-gray text-ink-black flex items-start gap-3 animate-fade-in">
                   <AlertTriangle size={16} className="text-ink-black flex-shrink-0 mt-0.5" />
                   <div className="space-y-0.5">
-                    <span className="font-mono text-[9px] font-bold uppercase block text-slate-gray">Transmission Error</span>
+                    <span className="font-sans text-[10px] font-bold uppercase block text-slate-gray">Transmission Error</span>
                     <p className="font-sans text-xs">{error}</p>
                   </div>
                 </div>
@@ -153,7 +152,7 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold text-ink-black uppercase tracking-wider block">Sender Name</label>
+                  <label className="text-[11px] font-sans font-bold text-ink-black uppercase tracking-wider block">Sender Name</label>
                   <input
                     type="text"
                     required
@@ -166,7 +165,7 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold text-ink-black uppercase tracking-wider block">Inbox Email</label>
+                  <label className="text-[11px] font-sans font-bold text-ink-black uppercase tracking-wider block">Inbox Email</label>
                   <input
                     type="email"
                     required
@@ -180,7 +179,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[10px] font-mono font-bold text-ink-black uppercase tracking-wider block">Scope of Inquiry</label>
+                <label className="text-[11px] font-sans font-bold text-ink-black uppercase tracking-wider block">Scope of Inquiry</label>
                 <select
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
@@ -194,7 +193,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[10px] font-mono font-bold text-ink-black uppercase tracking-wider block">Message Details</label>
+                <label className="text-[11px] font-sans font-bold text-ink-black uppercase tracking-wider block">Message Details</label>
                 <textarea
                   rows={4}
                   required

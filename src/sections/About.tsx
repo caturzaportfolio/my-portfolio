@@ -58,9 +58,8 @@ export default function About() {
         {/* Workflow Specs Panel */}
         <div className="md:col-span-5 space-y-6 bg-off-white border border-light-gray p-6 md:p-8">
           <div className="flex items-center gap-2 border-b border-light-gray pb-3 mb-4">
-            <Terminal size={16} className="text-ink-black" />
-            <span className="font-mono text-xs font-bold text-ink-black uppercase tracking-wider">
-              OPERATIONAL_PRINCIPLES
+            <span className="font-sans text-xs font-bold text-ink-black uppercase tracking-wider">
+              Operational Principles
             </span>
           </div>
 
