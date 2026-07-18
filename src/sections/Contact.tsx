@@ -14,6 +14,7 @@ export default function Contact() {
       id="contact"
       title="05. Establish Contact"
       subtitle="Operational inquiry channels open for frontend, collaborative development, or full-stack integrations."
+      sectionIndex={5}
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12" id="contact-container">
         {/* Call To Action Narrative */}

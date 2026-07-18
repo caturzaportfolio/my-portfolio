@@ -34,6 +34,7 @@ export default function Reliability() {
       id="reliability"
       title="04. Engineering Discipline"
       subtitle="Sustaining system uptime and code readability through strict, industry-proven software development workflows."
+      sectionIndex={4}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="reliability-practices-grid">
         {practices.map((practice) => {

@@ -9,11 +9,14 @@ import Reliability from "./sections/Reliability";
 import Contact from "./sections/Contact";
 import SwatchTest from "./sections/SwatchTest";
 import Header from "./sections/Header";
+import { useTheme } from "./hooks/useTheme";
 
 type ViewMode = "portfolio" | "spec";
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>("portfolio");
+  // Initialize and track active theme state
+  useTheme();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

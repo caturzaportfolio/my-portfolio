@@ -31,6 +31,7 @@ export default function Skills() {
       id="skills"
       title="02. Core Capabilities"
       subtitle="Structured compilation of technical stacks and production-grade tools verified through robust local builds."
+      sectionIndex={2}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="skills-grid-container">
         {skillCategories.map((category) => {

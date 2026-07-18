@@ -43,6 +43,7 @@ export default function Projects() {
       id="projects"
       title="03. Selected Works"
       subtitle="Exhibiting precise software engineering efforts, real contribution details, and measurable outcomes."
+      sectionIndex={3}
     >
       <div className="space-y-12" id="projects-grid-container">
         {projects.map((project) => (
