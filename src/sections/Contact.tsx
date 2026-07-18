@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import SectionWrapper from "../components/SectionWrapper";
 import Button from "../components/Button";
-import { Mail, ArrowUpRight, Terminal } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight, Terminal } from "lucide-react";
 
 export default function Contact() {
   const handleSubmit = (e: FormEvent) => {
@@ -12,7 +12,7 @@ export default function Contact() {
   return (
     <SectionWrapper
       id="contact"
-      title="04. Establish Contact"
+      title="05. Establish Contact"
       subtitle="Operational inquiry channels open for frontend, collaborative development, or full-stack integrations."
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12" id="contact-container">
@@ -35,10 +35,39 @@ export default function Contact() {
             <a
               href="mailto:jayr@operator.net"
               className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-mono font-bold text-ink-black uppercase"
+              id="contact-email-action"
             >
               <span className="flex items-center gap-2">
                 <Mail size={14} />
                 <span>jayr@operator.net</span>
+              </span>
+              <ArrowUpRight size={14} />
+            </a>
+
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-mono font-bold text-ink-black uppercase"
+              id="contact-github-action"
+            >
+              <span className="flex items-center gap-2">
+                <Github size={14} />
+                <span>github.com/jayr</span>
+              </span>
+              <ArrowUpRight size={14} />
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-mono font-bold text-ink-black uppercase"
+              id="contact-linkedin-action"
+            >
+              <span className="flex items-center gap-2">
+                <Linkedin size={14} />
+                <span>linkedin.com/in/jayr</span>
               </span>
               <ArrowUpRight size={14} />
             </a>

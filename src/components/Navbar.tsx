@@ -18,6 +18,7 @@ export default function Navbar({
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
+    { label: "Reliability", href: "#reliability" },
     { label: "Contact", href: "#contact" },
   ],
   onLinkClick,

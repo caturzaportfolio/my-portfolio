@@ -5,6 +5,7 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
+import Reliability from "./sections/Reliability";
 import Contact from "./sections/Contact";
 import SwatchTest from "./sections/SwatchTest";
 import Header from "./sections/Header";
@@ -79,6 +80,9 @@ export default function App() {
 
             {/* Projects Section */}
             <Projects />
+
+            {/* Reliability Section */}
+            <Reliability />
 
             {/* Contact Section */}
             <Contact />

@@ -1,31 +1,40 @@
 import SectionWrapper from "../components/SectionWrapper";
 import ProjectCard from "../components/ProjectCard";
-import { FolderGit2 } from "lucide-react";
+import { Landmark, Sparkles } from "lucide-react";
 
 export default function Projects() {
   const projects = [
     {
-      title: "SyncFlow - Multi-Workspace Broker",
-      description: "A highly resilient server-side gateway broker synchronizing file changes, team permissions, and credentials across distributed cloud storage environments.",
-      tags: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma ORM"],
-      contribution: "Designed standard token rotation pipelines, orchestrated modular Express routers with strict JWT auth constraints, and refined PostgreSQL indexing structures.",
-      outcome: "Eliminated synchronization deadlocks under heavy loads, decreased typical verification API latency by 35%, and established 100% type-safety metrics.",
+      title: "Talibon LGU Website - Municipal E-Services Platform",
+      description: "A production-grade government portal engineered for the Local Government Unit of Talibon. Designed to digitize civic services and streamline citizen registration and municipal transactions.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "REST APIs", "Node.js"],
+      contribution: "Spearheaded the development of the high-security E-Cedula Module and other municipal service application forms. Designed secure user session wrappers and state handlers to strictly satisfy local government accessibility and compliance parameters.",
+      outcome: "Successfully transitioned the municipality from manual physical queues to secure, reliable online filings, driving administrative processing efficiency and ensuring absolute data integrity.",
       screenshotSlot: (
         <div className="text-center font-mono space-y-2 p-4">
-          <FolderGit2 size={32} className="mx-auto text-ink-black animate-pulse" />
-          <div className="text-sm font-bold tracking-tighter text-ink-black uppercase">SYNC_FLOW_SYS</div>
+          <Landmark size={32} className="mx-auto text-ink-black animate-pulse" />
+          <div className="text-sm font-bold tracking-tighter text-ink-black uppercase">LGU_TALIBON_PORTAL</div>
           <span className="text-[8px] text-slate-gray uppercase bg-light-gray/60 px-1.5 py-0.5 border border-light-gray">
-            SERVER_STATUS_OK
+            COMPLIANCE_PASS
           </span>
         </div>
       ),
     },
     {
-      title: "OmniCore - Dynamic Interface Runtime",
-      description: "A comprehensive design system playground and component compilation sandbox for complex UI blueprints, optimizing rendering pipelines with zero HMR overhead.",
-      tags: ["React 19", "Vite", "Tailwind CSS v4", "Lucide React"],
-      contribution: "Authored fully typed layouts, aligned color contrasts with precise accessibility standards, and established robust responsive boundaries.",
-      outcome: "Enabled modular UI code reuse across 4 distinct micro-frontends, reducing downstream stylesheet sizes by 42% and simplifying developer onboardings.",
+      title: "[ Incoming Project Spec - Placeholder ]",
+      description: "Reserved space for upcoming full-stack systems engineering implementations. Built with standard modular layouts to enable clean configuration overrides when new specifications are registered.",
+      tags: ["TypeScript", "NestJS", "PostgreSQL", "Next.js"],
+      contribution: "Pending next-level pipeline requirements. Full contribution matrix, database schema definitions, and automated testing setups will be established at initial project genesis.",
+      outcome: "Engineered with strict types and predictable outcomes to sustain continuous deployment standards.",
+      screenshotSlot: (
+        <div className="text-center font-mono space-y-2 p-4">
+          <Sparkles size={32} className="mx-auto text-ink-black/40" />
+          <div className="text-sm font-bold tracking-tighter text-ink-black/40 uppercase">RESERVED_SLOT</div>
+          <span className="text-[8px] text-slate-gray uppercase bg-light-gray/60 px-1.5 py-0.5 border border-light-gray">
+            AWAITING_SPEC
+          </span>
+        </div>
+      ),
     },
   ];
 
