@@ -1,0 +1,6 @@
+{
+  "name": "Monochrome Design System",
+  "description": "A minimalist, high-contrast monochrome design system with custom grayscale palettes, elegant typography pairings, and a color and typography swatch test page.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
