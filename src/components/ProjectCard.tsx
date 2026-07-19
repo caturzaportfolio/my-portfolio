@@ -37,7 +37,7 @@ export default function ProjectCard({
         <div className="space-y-4">
           {/* Header & Badges */}
           <div className="space-y-1">
-            <span className="font-mono text-[9px] tracking-widest text-slate-gray uppercase">Project Specification</span>
+            <span className="font-sans text-[10px] font-bold tracking-wider text-slate-gray uppercase">Featured Project</span>
             <h3 className="font-display font-extrabold text-2xl text-ink-black tracking-tight uppercase leading-none">
               {title}
             </h3>
@@ -50,11 +50,11 @@ export default function ProjectCard({
           {/* Key sections for contribution and outcome */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-light-gray/60">
             <div>
-              <span className="font-mono text-[9px] text-slate-gray uppercase block font-bold tracking-wider">My Contribution</span>
+              <span className="font-sans text-[10px] font-bold text-slate-gray uppercase block tracking-wider">My Contribution</span>
               <p className="text-xs text-charcoal mt-1 leading-relaxed font-sans">{contribution}</p>
             </div>
             <div>
-              <span className="font-mono text-[9px] text-slate-gray uppercase block font-bold tracking-wider">Project Outcome</span>
+              <span className="font-sans text-[10px] font-bold text-slate-gray uppercase block tracking-wider">Project Outcome</span>
               <p className="text-xs text-charcoal mt-1 leading-relaxed font-sans">{outcome}</p>
             </div>
           </div>

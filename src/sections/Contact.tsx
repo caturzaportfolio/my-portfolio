@@ -41,7 +41,7 @@ export default function Contact() {
       setEmail("");
       setMessage("");
     } catch (err: any) {
-      setError(err.message || "Failed to establish database transmission connection.");
+      setError(err.message || "Failed to send message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -71,13 +71,13 @@ export default function Contact() {
 
           <div className="space-y-3 pt-4 border-t border-light-gray/60">
             <a
-              href="mailto:jayr@operator.net"
-              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-mono font-bold text-ink-black uppercase"
+              href="mailto:caturzajr4@gmail.com"
+              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-sans font-bold text-ink-black uppercase tracking-wider"
               id="contact-email-action"
             >
               <span className="flex items-center gap-2">
                 <Mail size={14} />
-                <span>jayr@operator.net</span>
+                <span>caturzajr4@gmail.com</span>
               </span>
               <ArrowUpRight size={14} />
             </a>
@@ -86,7 +86,7 @@ export default function Contact() {
               href="https://github.com"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-mono font-bold text-ink-black uppercase"
+              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-sans font-bold text-ink-black uppercase tracking-wider"
               id="contact-github-action"
             >
               <span className="flex items-center gap-2">
@@ -100,7 +100,7 @@ export default function Contact() {
               href="https://linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-mono font-bold text-ink-black uppercase"
+              className="flex items-center justify-between p-3 bg-off-white border border-light-gray hover:border-ink-black hover:bg-pure-white transition-all text-xs font-sans font-bold text-ink-black uppercase tracking-wider"
               id="contact-linkedin-action"
             >
               <span className="flex items-center gap-2">
@@ -122,7 +122,7 @@ export default function Contact() {
               
               <div className="space-y-2 max-w-md">
                 <h4 className="font-display font-black text-lg text-ink-black uppercase tracking-tight">
-                  Transmission Complete
+                  Message Sent
                 </h4>
                 <p className="font-sans text-xs text-slate-gray leading-relaxed">
                   {responseMsg}
@@ -144,7 +144,7 @@ export default function Contact() {
                 <div className="p-3 bg-off-white border border-light-gray text-ink-black flex items-start gap-3 animate-fade-in">
                   <AlertTriangle size={16} className="text-ink-black flex-shrink-0 mt-0.5" />
                   <div className="space-y-0.5">
-                    <span className="font-sans text-[10px] font-bold uppercase block text-slate-gray">Transmission Error</span>
+                    <span className="font-sans text-[10px] font-bold uppercase block text-slate-gray">Failed to Send</span>
                     <p className="font-sans text-xs">{error}</p>
                   </div>
                 </div>
@@ -214,11 +214,11 @@ export default function Contact() {
                 {loading ? (
                   <>
                     <Loader2 size={14} className="animate-spin" />
-                    <span>Transmitting Data...</span>
+                    <span>Sending message...</span>
                   </>
                 ) : (
                   <>
-                    <span>Transmit Message</span>
+                    <span>Send Message</span>
                     <ArrowUpRight size={14} />
                   </>
                 )}

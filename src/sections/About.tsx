@@ -24,7 +24,7 @@ export default function About() {
     <SectionWrapper
       id="about"
       title="01. About Me"
-      subtitle="Jayr // Synthesizing structured architecture and user experience into deterministic frontend experiences."
+      subtitle="Jayr // Building clean, highly performant, and reliable web applications with absolute visual precision."
       sectionIndex={1}
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start" id="about-content-grid">
@@ -59,7 +59,7 @@ export default function About() {
         <div className="md:col-span-5 space-y-6 bg-off-white border border-light-gray p-6 md:p-8">
           <div className="flex items-center gap-2 border-b border-light-gray pb-3 mb-4">
             <span className="font-sans text-xs font-bold text-ink-black uppercase tracking-wider">
-              Operational Principles
+              Key Focus Areas
             </span>
           </div>
 

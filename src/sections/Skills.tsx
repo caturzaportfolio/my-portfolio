@@ -30,7 +30,7 @@ export default function Skills() {
     <SectionWrapper
       id="skills"
       title="02. Core Capabilities"
-      subtitle="Structured compilation of technical stacks and production-grade tools verified through robust local builds."
+      subtitle="A structured compilation of development tools, technical stacks, and reliable engineering frameworks."
       sectionIndex={2}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="skills-grid-container">
@@ -54,7 +54,7 @@ export default function Skills() {
                 </div>
                 
                 <p className="font-sans text-xs text-slate-gray leading-relaxed">
-                  Proven proficiency, conceptual deep-dive integration, and compile-checked experience in active client architectures.
+                  Hands-on experience and professional proficiency with modern industry standards and design structures.
                 </p>
               </div>
 

@@ -8,7 +8,7 @@ export interface FooterProps {
 }
 
 export default function Footer({
-  email = "jayr@operator.net",
+  email = "caturzajr4@gmail.com",
   github = "https://github.com",
   linkedin = "https://linkedin.com",
   onBackToTop,
@@ -36,7 +36,7 @@ export default function Footer({
 
         {/* Contact Links & Return Button */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 font-mono text-xs">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 font-sans font-bold tracking-wider text-[11px]">
             <a
               href={`mailto:${email}`}
               className="flex items-center gap-1.5 text-slate-gray hover:text-ink-black transition-colors"

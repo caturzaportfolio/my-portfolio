@@ -14,7 +14,7 @@ export interface NavbarProps {
 }
 
 export default function Navbar({
-  logo = "Jayr",
+  logo = "Felicito",
   links = [
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
@@ -94,7 +94,7 @@ export default function Navbar({
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search spec..."
+                    placeholder="Search..."
                     autoFocus
                     className="w-28 sm:w-36 bg-off-white border border-light-gray px-2 py-1 text-xs font-mono text-ink-black focus:outline-none focus:border-ink-black rounded-none"
                     id="nav-search-input"

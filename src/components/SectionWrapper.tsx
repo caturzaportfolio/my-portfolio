@@ -43,7 +43,7 @@ export default function SectionWrapper({
               {/* Vertical Text Label */}
               <h2 
                 style={{ writingMode: 'vertical-rl' }}
-                className="font-display font-black text-3xl lg:text-4xl tracking-tighter text-ink-black uppercase rotate-180 my-4 text-center"
+                className="font-display font-black text-3xl lg:text-4xl tracking-tighter text-ink-black uppercase rotate-180 my-4 text-center whitespace-nowrap min-h-[220px] flex items-center justify-center"
               >
                 {name}
               </h2>

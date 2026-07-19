@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="hidden md:block h-6" />
 
       {/* Main Asymmetric Grid */}
-      <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
+      <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start pt-16">
         {/* Left Column: Generous Whitespace / Tiny System Index */}
         <div className="md:col-span-4 space-y-2 select-none">
           <div className="font-sans text-[11px] font-bold text-slate-gray uppercase tracking-widest">
@@ -39,21 +39,21 @@ export default function Hero() {
           {/* Understated Contact / Info */}
           <div className="pt-6 border-t border-light-gray/60 max-w-lg space-y-6">
             <div className="space-y-1">
-              <span className="font-mono text-[9px] text-slate-gray uppercase tracking-wider block">Direct Line</span>
+              <span className="font-sans text-[10px] font-bold text-slate-gray uppercase tracking-wider block">Inquiries</span>
               <a
-                href="mailto:jayr@operator.net"
-                className="font-mono text-sm font-bold text-ink-black hover:opacity-70 transition-opacity uppercase tracking-tight block"
+                href="mailto:caturzajr4@gmail.com"
+                className="font-sans text-sm font-bold text-ink-black hover:opacity-70 transition-opacity uppercase tracking-tight block"
               >
-                jayr@operator.net
+                caturzajr4@gmail.com
               </a>
             </div>
 
             {/* Micro-Action */}
             <button
               onClick={handleScrollToAbout}
-              className="group flex items-center gap-2 font-mono text-[11px] font-bold text-ink-black uppercase tracking-wider hover:opacity-75 transition-all cursor-pointer"
+              className="group flex items-center gap-2 font-sans text-[11px] font-bold text-ink-black uppercase tracking-wider hover:opacity-75 transition-all cursor-pointer"
             >
-              <span>Explore full specifications</span>
+              <span>Explore Portfolio</span>
               <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
             </button>
           </div>
@@ -68,7 +68,7 @@ export default function Hero() {
         
         {/* Minimal indicator */}
         <div className="flex items-center gap-4">
-          <span className="font-mono text-[9px] uppercase tracking-wider">Scroll Down</span>
+          <span className="font-sans text-[10px] font-bold uppercase tracking-wider">Scroll Down</span>
           <div className="flex items-center gap-1">
             {[1, 2, 3, 4, 5].map((i) => (
               <span

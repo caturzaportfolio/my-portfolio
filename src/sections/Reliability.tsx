@@ -6,13 +6,13 @@ export default function Reliability() {
     {
       icon: GitPullRequest,
       title: "Structured Git Workflow",
-      subtitle: "Deterministic Version Control",
+      subtitle: "Stable Version Control",
       description: "Strict isolation of features inside distinct branches, rigorous peer reviews, comprehensive pull request write-ups, and programmatic conflict resolution.",
     },
     {
       icon: FileCode2,
       title: "Maintainable Codebases",
-      subtitle: "Sustained Structural Integrity",
+      subtitle: "Clean & Modular Layouts",
       description: "Writing self-documenting code, enforcing modular file separation, strict typing models, and prioritizing readable systems layout over clever shortcuts.",
     },
     {
@@ -33,7 +33,7 @@ export default function Reliability() {
     <SectionWrapper
       id="reliability"
       title="04. Engineering Discipline"
-      subtitle="Sustaining system uptime and code readability through strict, industry-proven software development workflows."
+      subtitle="Focusing on maintainability, readability, and structured processes throughout every stage of development."
       sectionIndex={4}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="reliability-practices-grid">

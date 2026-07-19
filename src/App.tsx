@@ -94,7 +94,7 @@ export default function App() {
 
           {/* Minimal Footer */}
           <Footer
-            email="jayr@operator.net"
+            email="caturzajr4@gmail.com"
             onBackToTop={scrollToTop}
           />
         </div>
